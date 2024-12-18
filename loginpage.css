@@ -1,0 +1,61 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+input:focus, 
+input.form-control:focus {
+    outline: none !important; 
+    box-shadow: none !important;
+    border-color: #b64848; /* Cor personalizada da borda ao focar (opcional) */
+}
+
+div.loginHead svg {
+    color: #b64848;
+}
+
+#cards {
+    display: flex;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+#card1 {
+    background-color: #fff;
+    width: 400px;
+    padding: 20px;
+}
+
+.IMGdiv {
+    background-image: url("login\ img/4451.jpg");
+    background-size: cover;
+    width: 400px;
+    height: 483px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-color {
+    color: #b64848 !important; /* Cor para títulos */
+}
+
+.subtitle-color {
+    color: #b64848; /* Cor para subtítulos */
+}
+
+.btn-custom {
+    background-color: #b64848;
+    color: #fff;
+    border: none;
+}
+
+.btn-custom:hover {
+    background-color: #9e3d3d; /* Cor mais escura ao passar o mouse */
+    color: #fff;
+}
