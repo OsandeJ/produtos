@@ -76,7 +76,7 @@
 </body>
 <script>
     document.getElementById('formProduto').addEventListener('submit', function(event) {
-    event.preventDefault(); // Impede que o envio do formulário recarregue a pagina
+      // Impede que o envio do formulário recarregue a pagina
 
     // Captura os dados do formulário
     const nomeProduto = document.getElementById('nomeProduto').value;
@@ -92,7 +92,6 @@
 
     // Verifica se já existe um arquivo (localStorage) para armazenar os produtos
     let produtos = localStorage.getItem('produtos');
-
     // Se já houver produtos salvos, adiciona o novo produto à lista
     if (produtos) {
         produtos = JSON.parse(produtos); // Converte de string para objeto Json
