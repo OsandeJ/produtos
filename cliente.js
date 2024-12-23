@@ -1,6 +1,7 @@
-
 document.getElementById('formCliente').addEventListener('submit', function (event) {
     event.preventDefault(); // Impede que o envio do formulário recarregue a página
+
+    console.log("Formulário enviado");  // Para verificar se o evento é acionado
 
     // Captura os dados do formulário
     const nomeCliente = document.getElementById('nomeCliente').value;

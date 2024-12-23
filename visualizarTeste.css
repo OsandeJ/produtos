@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+section.Background-IMG {
+    background-image: url("Background\ Images/89597.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.Background-IMG h1 {
+    color: #fff;
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+#VisualizarTeste {
+    max-width: 1200px; /* Limita a largura máxima */
+    margin: 50px auto; /* Centraliza a div horizontalmente */
+    padding: 20px;
+    width: 90%; /* Ajuste a largura conforme necessário */
+}
+
+#VisualizarTeste div {
+    margin-bottom: 40px;
+}
+
+#VisualizarTeste h2 {
+    font-size: 24px;
+    color: #b64848;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #b64848;
+    color: #fff;
+    font-weight: bold;
+}
+
+table td {
+    color: #555;
+}
+
+table tr:hover {
+    background-color: #f0f0f0;
+}
+
+/* Alinha o cabeçalho e as células das colunas "Preço" e "Telefone" à direita */
+table th:nth-child(3),
+table td:nth-child(3), /* Alinha "Preço" à direita */
+table th:nth-child(2),
+table td:nth-child(2) { /* Alinha "Telefone" à direita */
+    text-align: right;
+}
+
+
+.botao-home {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #b64848;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 7px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 10;
+}
+
+.botao-home:hover {
+    background-color: #0073e6;
+    transform: scale(1.05);
+}
+
+.LogOut {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #b64848;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 7px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 10;
+}
+
+.LogOut:hover {
+    background-color: #0073e6;
+    transform: scale(1.05);
+}
