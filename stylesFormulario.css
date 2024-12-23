@@ -38,7 +38,7 @@ section.Background-IMG h1 {
     padding: 20px;
 }
 
-#cards > div {
+#cards>div {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -76,7 +76,8 @@ section.Background-IMG h1 {
 }
 
 #cards a:hover {
-    color: #0073e6; /* Cor ao passar o mouse */
+    color: #0073e6;
+    /* Cor ao passar o mouse */
 }
 
 .rodape {
@@ -105,17 +106,20 @@ section.Background-IMG h1 {
     font-weight: bold;
 }
 
-.coluna-rodape p, 
-.coluna-rodape ul, 
+.coluna-rodape p,
+.coluna-rodape ul,
 .coluna-rodape a {
     font-size: 14px;
     color: #555;
     text-decoration: none;
 }
+
 #slogan {
     text-align: center;
-    padding: 0; /* Remove qualquer padding */
-    margin: 0; /* Remove qualquer margem */
+    padding: 0;
+    /* Remove qualquer padding */
+    margin: 0;
+    /* Remove qualquer margem */
     font-size: 16px;
     font-weight: normal;
     color: #555;
@@ -157,7 +161,8 @@ section.Background-IMG h1 {
 }
 
 .links-sociais li a:hover {
-    color: #fff; /* Cor ao passar o mouse */
+    color: #fff;
+    /* Cor ao passar o mouse */
 }
 
 .links-esquerda li a {
@@ -167,7 +172,8 @@ section.Background-IMG h1 {
 }
 
 .links-esquerda li a:hover {
-    color: #fff; /* Cor ao passar o mouse */
+    color: #fff;
+    /* Cor ao passar o mouse */
 }
 
 .subtitulo {
@@ -177,34 +183,52 @@ section.Background-IMG h1 {
     color: #b64848;
     margin: 30px 0;
 }
-.formulario input:focus, 
-.formulario textarea:focus {
-    border-color: #b64848; /* Altere para a cor desejada */
-    outline: none; /* Remove o contorno padrão do navegador */
-}
 
+.formulario input:focus,
+.formulario textarea:focus {
+    border-color: #b64848;
+    /* Altere para a cor desejada */
+    outline: none;
+    /* Remove o contorno padrão do navegador */
+}
 
 .formulario {
     border: none;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-width: 500px;
+    max-width: 400px;
+    /* Ajustado para deixar mais estreito */
     margin: 0 auto;
     background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 20px 15px;
+    /* Ajustado para deixar mais compacto */
+    border-radius: 8px;
+    /* Arredondamento mais sutil */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Adiciona sombra para destacar o formulário */
 }
 
 .formulario label {
     font-weight: bold;
     color: #333;
+    font-size: 14px;
+    /* Fonte menor */
 }
 
-.formulario input, .formulario textarea {
+.formulario input,
+.formulario textarea {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
+    /* Cor mais clara */
     border-radius: 5px;
+    font-size: 14px;
+    /* Fonte menor */
+}
+
+.formulario input::placeholder {
+    color: #aaa;
+    /* Placeholder mais sutil */
 }
 
 .formulario button {
@@ -212,42 +236,26 @@ section.Background-IMG h1 {
     color: #fff;
     border: none;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 8px;
+    /* Mais arredondado para se parecer com o botão da imagem */
     cursor: pointer;
     font-size: 16px;
+    font-weight: bold;
     transition: background-color 0.3s ease;
 }
 
 .formulario button:hover {
-    background-color: #0073e6;
-}
-
-.tabela-pedidos {
-    width: 80%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    background-color: #fff;
-}
-
-.tabela-pedidos th, .tabela-pedidos td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-}
-
-.tabela-pedidos th {
-    background-color: #b64848;
-    color: #fff;
-}
-
-.tabela-pedidos tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #a53d3d;
+    /* Cor mais escura ao passar o mouse */
 }
 
 .botao-home {
-    position: absolute; /* Permite posicionar o botão */
-    top: 20px; /* Distância do topo */
-    right: 20px; /* Distância da direita */
+    position: absolute;
+    /* Permite posicionar o botão */
+    top: 20px;
+    /* Distância do topo */
+    right: 20px;
+    /* Distância da direita */
     background-color: #b64848;
     color: #fff;
     text-decoration: none;
@@ -256,7 +264,8 @@ section.Background-IMG h1 {
     font-size: 16px;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    z-index: 10; /* Garante que o botão fique acima de outros elementos */
+    z-index: 10;
+    /* Garante que o botão fique acima de outros elementos */
 }
 
 .botao-home:hover {
@@ -265,25 +274,34 @@ section.Background-IMG h1 {
 }
 
 /* Estiliza todos os placeholders */
-input::placeholder, 
+input::placeholder,
 textarea::placeholder {
-    font-family: Arial, sans-serif; /* Garanta a mesma fonte */
-    font-size: 14px; /* Tamanho da fonte */
-    color: #999; /* Cor do texto (ajuste conforme necessário) */
-    opacity: 1; /* Torna o placeholder completamente visível */
+    font-family: Arial, sans-serif;
+    /* Garanta a mesma fonte */
+    font-size: 14px;
+    /* Tamanho da fonte */
+    color: #999;
+    /* Cor do texto (ajuste conforme necessário) */
+    opacity: 1;
+    /* Torna o placeholder completamente visível */
 }
 
 /* Opcional: Ajustar todos os inputs e textarea */
-.formulario input, 
+.formulario input,
 .formulario textarea {
-    font-family: Arial, sans-serif; /* Igualar a fonte do texto digitado */
-    font-size: 14px; /* Tamanho consistente */
+    font-family: Arial, sans-serif;
+    /* Igualar a fonte do texto digitado */
+    font-size: 14px;
+    /* Tamanho consistente */
 }
 
 .LogOut {
-    position: absolute; /* Permite posicionar o botão */
-    top: 60px; /* Distância do topo */
-    right: 20px; /* Distância da direita */
+    position: absolute;
+    /* Permite posicionar o botão */
+    top: 60px;
+    /* Distância do topo */
+    right: 20px;
+    /* Distância da direita */
     background-color: #b64848;
     color: #fff;
     text-decoration: none;
@@ -292,7 +310,8 @@ textarea::placeholder {
     font-size: 16px;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    z-index: 10; /* Garante que o botão fique acima de outros elementos */
+    z-index: 10;
+    /* Garante que o botão fique acima de outros elementos */
 }
 
 .LogOut:hover {

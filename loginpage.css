@@ -7,11 +7,13 @@ body {
     align-items: center;
     margin: 0;
 }
-input:focus, 
+
+input:focus,
 input.form-control:focus {
-    outline: none !important; 
+    outline: none !important;
     box-shadow: none !important;
-    border-color: #b64848; /* Cor personalizada da borda ao focar (opcional) */
+    border-color: #b64848;
+    /* Cor personalizada da borda ao focar (opcional) */
 }
 
 div.loginHead svg {
@@ -22,7 +24,8 @@ div.loginHead svg {
     display: flex;
     max-width: 800px;
     width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra */
 }
 
 #card1 {
@@ -42,11 +45,13 @@ div.loginHead svg {
 }
 
 .title-color {
-    color: #b64848 !important; /* Cor para títulos */
+    color: #b64848 !important;
+    /* Cor para títulos */
 }
 
 .subtitle-color {
-    color: #b64848; /* Cor para subtítulos */
+    color: #b64848;
+    /* Cor para subtítulos */
 }
 
 .btn-custom {
@@ -56,6 +61,7 @@ div.loginHead svg {
 }
 
 .btn-custom:hover {
-    background-color: #9e3d3d; /* Cor mais escura ao passar o mouse */
+    background-color: #9e3d3d;
+    /* Cor mais escura ao passar o mouse */
     color: #fff;
 }

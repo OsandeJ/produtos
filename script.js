@@ -1,4 +1,4 @@
-document.getElementById('formProduto').addEventListener('submit', function(event) {
+document.getElementById('formProduto').addEventListener('submit', function (event) {
     // Impede que o envio do formulário recarregue a pagina
 
     // Captura os dados do formulário
@@ -35,7 +35,7 @@ document.getElementById('formProduto').addEventListener('submit', function(event
     document.getElementById('formProduto').reset();
 });
 
-document.getElementById('formCliente').addEventListener('submit', function(event) {
+document.getElementById('formCliente').addEventListener('submit', function (event) {
     event.preventDefault(); // Impede que o envio do formulário recarregue a página
 
     // Captura os dados do formulário
