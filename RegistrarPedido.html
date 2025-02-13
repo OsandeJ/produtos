@@ -33,25 +33,71 @@
             <label for="cliente">Cliente</label>
             <select id="cliente" name="cliente" required>
                 <option value="" disabled selected>Selecione um cliente</option>
-                <option value="joao_silva">João Silva</option>
-                <option value="maria_oliveira">Maria Oliveira</option>
-                <option value="ana_santos">Ana Santos</option>
             </select>
-
+        
             <label for="produto">Produto</label>
             <select id="produto" name="produto" required>
                 <option value="" disabled selected>Selecione um produto</option>
-                <option value="hamburguer">Hambúrguer</option>
-                <option value="batata_frita">Batata Frita</option>
-                <option value="refrigerante">Refrigerante</option>
-                <option value="milkshake">Milkshake</option>
             </select>
-
+        
             <label for="quantidade">Quantidade</label>
             <input type="number" id="quantidade" name="quantidade" required placeholder="Digite a quantidade">
-
+        
             <button type="submit">Registrar Pedido</button>
         </form>
+        
+        <script>
+            async function carregarClientes() {
+                const response = await fetch("http://localhost:3000/clientes");
+                const clientes = await response.json();
+                const select = document.getElementById("cliente");
+        
+                select.innerHTML = '<option value="" disabled selected>Selecione um cliente</option>';
+        
+                clientes.forEach(cliente => {
+                    const option = document.createElement("option");
+                    option.value = cliente.nome;
+                    option.textContent = `${cliente.nome} - ${cliente.telefone}`;
+                    select.appendChild(option);
+                });
+            }
+        
+            async function carregarProdutos() {
+                const response = await fetch("http://localhost:3000/produtos");
+                const produtos = await response.json();
+                const select = document.getElementById("produto");
+        
+                select.innerHTML = '<option value="" disabled selected>Selecione um produto</option>';
+        
+                produtos.forEach(produto => {
+                    const option = document.createElement("option");
+                    option.value = produto.nome;
+                    option.textContent = `${produto.nome} - R$${produto.preco.toFixed(2)}`;
+                    select.appendChild(option);
+                });
+            }
+        
+            document.getElementById("formPedido").addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const pedido = {
+            cliente: document.getElementById("cliente").value,
+            produto: document.getElementById("produto").value,
+            quantidade: parseInt(document.getElementById("quantidade").value)
+        };
+
+        const response = await fetch("http://localhost:3000/pedidos", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(pedido)
+        });
+
+        if (response.ok) {
+            alert("Pedido registrado com sucesso!");
+            document.getElementById("formPedido").reset();
+        }
+    });
+        </script>             
 
     </main>
 

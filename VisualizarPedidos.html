@@ -54,6 +54,29 @@
             </tbody>
         </table>
     </main>
+    <script>
+        async function carregarPedidos() {
+            const response = await fetch("http://localhost:3000/pedidos");
+            const pedidos = await response.json();
+            const tbody = document.querySelector(".tabela-pedidos tbody");
+    
+            tbody.innerHTML = ""; // Limpa a tabela antes de preencher
+    
+            pedidos.forEach((pedido) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${pedido.id}</td>
+                    <td>${pedido.cliente}</td>
+                    <td>${pedido.produto}</td>
+                    <td>${pedido.quantidade}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+    
+        document.addEventListener("DOMContentLoaded", carregarPedidos);
+    </script>
+    
 
     <footer class="rodape">
         <div class="container-rodape">
