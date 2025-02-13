@@ -46,58 +46,7 @@
             <button type="submit">Registrar Pedido</button>
         </form>
         
-        <script>
-            async function carregarClientes() {
-                const response = await fetch("http://localhost:3000/clientes");
-                const clientes = await response.json();
-                const select = document.getElementById("cliente");
-        
-                select.innerHTML = '<option value="" disabled selected>Selecione um cliente</option>';
-        
-                clientes.forEach(cliente => {
-                    const option = document.createElement("option");
-                    option.value = cliente.nome;
-                    option.textContent = `${cliente.nome} - ${cliente.telefone}`;
-                    select.appendChild(option);
-                });
-            }
-        
-            async function carregarProdutos() {
-                const response = await fetch("http://localhost:3000/produtos");
-                const produtos = await response.json();
-                const select = document.getElementById("produto");
-        
-                select.innerHTML = '<option value="" disabled selected>Selecione um produto</option>';
-        
-                produtos.forEach(produto => {
-                    const option = document.createElement("option");
-                    option.value = produto.nome;
-                    option.textContent = `${produto.nome} - R$${produto.preco.toFixed(2)}`;
-                    select.appendChild(option);
-                });
-            }
-        
-            document.getElementById("formPedido").addEventListener("submit", async (event) => {
-        event.preventDefault();
-
-        const pedido = {
-            cliente: document.getElementById("cliente").value,
-            produto: document.getElementById("produto").value,
-            quantidade: parseInt(document.getElementById("quantidade").value)
-        };
-
-        const response = await fetch("http://localhost:3000/pedidos", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(pedido)
-        });
-
-        if (response.ok) {
-            alert("Pedido registrado com sucesso!");
-            document.getElementById("formPedido").reset();
-        }
-    });
-        </script>             
+                
 
     </main>
 
@@ -124,8 +73,6 @@
                 <h3>Estúdio</h3>
                 <p>Benguela</p>
             </div>
-
-
             <!-- Coluna Direita -->
             <div class="coluna-rodape direita-rodape">
                 <h3>Redes Sociais</h3>
@@ -139,6 +86,87 @@
         </div>
         <p id="slogan">Faça sua marca<sup>®</sup> a escolha óbvia</p>
     </footer>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    carregarClientes();
+    carregarProdutos();
+});
+
+async function carregarClientes() {
+    console.log("Carregando clientes...");
+    try {
+        const response = await fetch("http://localhost:3000/clientes");
+        if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`);
+
+        const clientes = await response.json();
+        console.log("Clientes carregados:", clientes);
+
+        const select = document.getElementById("cliente");
+        select.innerHTML = '<option value="" disabled selected>Selecione um cliente</option>';
+
+        clientes.forEach(cliente => {
+            const option = document.createElement("option");
+            option.value = cliente.nome;
+            option.textContent = `${cliente.nome} - ${cliente.telefone}`;
+            select.appendChild(option);
+        });
+    } catch (error) {
+        console.error("Erro ao carregar clientes:", error);
+    }
+}
+
+async function carregarProdutos() {
+    console.log("Carregando produtos...");
+    try {
+        const response = await fetch("http://localhost:3000/produtos");
+        if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`);
+
+        const produtos = await response.json();
+        console.log("Produtos carregados:", produtos);
+
+        const select = document.getElementById("produto");
+        select.innerHTML = '<option value="" disabled selected>Selecione um produto</option>';
+
+        produtos.forEach(produto => {
+            const option = document.createElement("option");
+            option.value = produto.nome;
+            option.textContent = `${produto.nome} - R$${produto.preco.toFixed(2)}`;
+            select.appendChild(option);
+        });
+    } catch (error) {
+        console.error("Erro ao carregar produtos:", error);
+    }
+}
+
+document.getElementById("formPedido").addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const pedido = {
+        cliente: document.getElementById("cliente").value,
+        produto: document.getElementById("produto").value,
+        quantidade: parseInt(document.getElementById("quantidade").value)
+    };
+
+    console.log("Enviando pedido:", pedido);
+
+    try {
+        const response = await fetch("http://localhost:3000/pedidos", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(pedido)
+        });
+
+        if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`);
+
+        alert("Pedido registrado com sucesso!");
+        document.getElementById("formPedido").reset();
+    } catch (error) {
+        console.error("Erro ao registrar pedido:", error);
+        alert("Erro ao registrar pedido. Tente novamente.");
+    }
+});
+
+    </script>     
 </body>
 
 </html>
